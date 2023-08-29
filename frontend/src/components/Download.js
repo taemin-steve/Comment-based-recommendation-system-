@@ -31,80 +31,80 @@ function Download({ setModalOpen }) {
   const sampleDownload = [
     {
       imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/j6jp-2022-09-13/18-53-48-050/appIcon.jpeg",
-      name: "천애명월도M",
+        "https://playgame-img.kakaogames.com/production/images/9jxg-2019-06-13/14-32-21-238/appIcon.png",
+      name: "애니팡",
       category: "",
     },
     {
       imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/t0u3-2022-06-16/16-34-54-372/appIcon.jpeg",
-      name: "우마무스메 프리티 더비",
+        "https://playgame-img.kakaogames.com/production/images/6ztk-2020-06-25/11-28-16-869/appIcon.png",
+      name: "오목",
       category: "",
     },
     {
       imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/k5u0-2021-09-07/14-30-15-789/appIcon.png",
-      name: "월드 플리퍼",
+        "https://playgame-img.kakaogames.com/production/images/o7gg-2023-06-08/09-02-36-034/appIcon.png",
+      name: "메이플스토리M",
       category: "",
     },
     {
       imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/k5u0-2021-09-07/14-30-15-789/appIcon.png",
-      name: "월드 플리퍼",
+        "https://playgame-img.kakaogames.com/production/images/yt5p-2021-06-25/00-19-48-939/appIcon.jpeg",
+      name: "오딘: 발할라 라이징",
       category: "",
     },
   ];
-  const DownloadList = [
-    {
-      imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/j6jp-2022-09-13/18-53-48-050/appIcon.jpeg",
-      name: "천애명월도M",
-      category: "",
-    },
-    {
-      imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/t0u3-2022-06-16/16-34-54-372/appIcon.jpeg",
-      name: "우마무스메 프리티 더비",
-      category: "",
-    },
-    {
-      imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/k5u0-2021-09-07/14-30-15-789/appIcon.png",
-      name: "월드 플리퍼",
-      category: "",
-    },
-    {
-      imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/k5u0-2021-09-07/14-30-15-789/appIcon.png",
-      name: "월드 플리퍼",
-      category: "",
-    },
-  ];
+  // const DownloadList = [
+  //   {
+  //     imgUrl:
+  //       "https://playgame-img.kakaogames.com/production/images/j6jp-2022-09-13/18-53-48-050/appIcon.jpeg",
+  //     name: "천애명월도M",
+  //     category: "",
+  //   },
+  //   {
+  //     imgUrl:
+  //       "https://playgame-img.kakaogames.com/production/images/t0u3-2022-06-16/16-34-54-372/appIcon.jpeg",
+  //     name: "우마무스메 프리티 더비",
+  //     category: "",
+  //   },
+  //   {
+  //     imgUrl:
+  //       "https://playgame-img.kakaogames.com/production/images/k5u0-2021-09-07/14-30-15-789/appIcon.png",
+  //     name: "월드 플리퍼",
+  //     category: "",
+  //   },
+  //   {
+  //     imgUrl:
+  //       "https://playgame-img.kakaogames.com/production/images/k5u0-2021-09-07/14-30-15-789/appIcon.png",
+  //     name: "월드 플리퍼",
+  //     category: "",
+  //   },
+  // ];
   const [xImg, setXImg] = useState(false);
 
   // 서버로 데이터를 보내는 함수
-  const sendDataToServer = async () => {
-    try {
-      const response = await fetch("http://localhost:8000/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          DownloadList,
-        }),
-      });
+  // const sendDataToServer = async () => {
+  //   try {
+  //     const response = await fetch("http://localhost:8000/", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         DownloadList,
+  //       }),
+  //     });
 
-      if (response.ok) {
-        // 데이터가 성공적으로 전송되었습니다. 필요한 경우 응답을 처리할 수 있습니다.
-        console.log("데이터 전송 성공");
-      } else {
-        console.error("서버로 데이터 전송 중 오류 발생");
-      }
-    } catch (error) {
-      console.error("서버로 데이터 전송 중 오류 발생:", error);
-    }
-  };
+  //     if (response.ok) {
+  //       // 데이터가 성공적으로 전송되었습니다. 필요한 경우 응답을 처리할 수 있습니다.
+  //       console.log("데이터 전송 성공");
+  //     } else {
+  //       console.error("서버로 데이터 전송 중 오류 발생");
+  //     }
+  //   } catch (error) {
+  //     console.error("서버로 데이터 전송 중 오류 발생:", error);
+  //   }
+  // };
 
   const closeModal = () => {
     setModalOpen(false);
