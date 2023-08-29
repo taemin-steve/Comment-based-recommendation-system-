@@ -124,7 +124,7 @@ async def receive_modal_data(modal_data: dict):
         # print(received_modal_data['DownloadList'][i]['name'])
         # print(received_modal_data['DownloadList'][i]['name'])
         a = recommend_movie_list_kt(rev_data, movie_title = received_modal_data['DownloadList'][i]['name'])
-        a = a[['title','score', 'img', 'key_words']]
+        a = a[['title','score']]
         for i in range(len(a)):
             d[a.iloc[i][0]] += a.iloc[i][1]
     d =  sorted(d.items(), key=lambda x: -x[1])
