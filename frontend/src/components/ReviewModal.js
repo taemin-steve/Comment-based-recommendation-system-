@@ -73,7 +73,7 @@ function ReviewModal({ setModalOpen }) {
       name: "메이플스토리M",
     },
     {
-      name: "오딘",
+      name: "오딘: 발할라 라이징",
     },
   ];
 
