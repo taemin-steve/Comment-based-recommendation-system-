@@ -64,16 +64,16 @@ function ReviewModal({ setModalOpen }) {
 
   const DownloadList = [
     {
-      name: "천애명월도M",
+      name: "애니팡",
     },
     {
-      name: "천애명월도M",
+      name: "오목",
     },
     {
-      name: "천애명월도M",
+      name: "메이플스토리M",
     },
     {
-      name: "천애명월도M",
+      name: "오딘",
     },
   ];
 

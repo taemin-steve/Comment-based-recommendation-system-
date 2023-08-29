@@ -38,7 +38,7 @@ sampleDownload = [
 async def receive_modal_data(modal_data: dict):
     global received_modal_data
     received_modal_data = modal_data
-    print(received_modal_data)
+    print(type(received_modal_data))
     return {"message": "Data received successfully"}
 
 @app.get('/getSampleDownload')  
