@@ -40,40 +40,40 @@ function ReviewModal({ setModalOpen }) {
       imgUrl:
         "https://playgame-img.kakaogames.com/production/images/j6jp-2022-09-13/18-53-48-050/appIcon.jpeg",
       name: "천애명월도M",
-      category: "",
+      keyword: "",
     },
     {
       imgUrl:
         "https://playgame-img.kakaogames.com/production/images/t0u3-2022-06-16/16-34-54-372/appIcon.jpeg",
       name: "우마무스메 프리티 더비",
-      category: "",
+      keyword: "",
     },
     {
       imgUrl:
         "https://playgame-img.kakaogames.com/production/images/k5u0-2021-09-07/14-30-15-789/appIcon.png",
       name: "월드 플리퍼",
-      category: "",
+      keyword: "ㅁㅁ",
     },
     {
       imgUrl:
         "https://playgame-img.kakaogames.com/production/images/k5u0-2021-09-07/14-30-15-789/appIcon.png",
       name: "월드 플리퍼",
-      category: "",
+      keyword: "",
     },
   ];
 
   const DownloadList = [
     {
-      name: "애니팡",
+      name: "천애명월도M",
     },
     {
-      name: "오목",
+      name: "천애명월도M",
     },
     {
-      name: "메이플스토리M",
+      name: "천애명월도M",
     },
     {
-      name: "오딘: 발할라 라이징",
+      name: "천애명월도M",
     },
   ];
 
