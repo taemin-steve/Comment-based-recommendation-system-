@@ -30,19 +30,36 @@ function Result({ setModalOpen }) {
     return keywords.replace(/\[|\]|'/g, "").split(",");
   };
 
-  // 랜덤 색상을 반환하는 함수
-  const getRandomColor = () => {
-    const colors = [
-      "#abdee6",
-      "#cbaacb",
-      "#ffdbcc",
-      "#ffccb6",
-      "#f3b0c3",
-      "#55Cbcd",
-    ];
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    return colors[randomIndex];
-  };
+  const sampleDownload = [
+    {
+      imgUrl:
+        "https://playgame-img.kakaogames.com/production/images/9jxg-2019-06-13/14-32-21-238/appIcon.png",
+      name: "애니팡",
+      category:
+        "['슈트', '그래픽', 'sf', 'pc', '재미', '아레스', '타격감', '리니지', '필드', '최적화']",
+    },
+    {
+      imgUrl:
+        "https://playgame-img.kakaogames.com/production/images/6ztk-2020-06-25/11-28-16-869/appIcon.png",
+      name: "오목",
+      category:
+        "['미르4', '그래픽', '미르', '채집', '토벌', '컨텐츠', '진행', '마방진', '기연', '정도']",
+    },
+    {
+      imgUrl:
+        "https://playgame-img.kakaogames.com/production/images/o7gg-2023-06-08/09-02-36-034/appIcon.png",
+      name: "메이플스토리M",
+      category:
+        "['영지', '에버', '스토리', '소울', '정령', '캐릭터', '컨텐츠', '모델링', '전투', '재화']",
+    },
+    {
+      imgUrl:
+        "https://playgame-img.kakaogames.com/production/images/yt5p-2021-06-25/00-19-48-939/appIcon.jpeg",
+      name: "오딘: 발할라 라이징",
+      category:
+        "['리니지', '아키에이지', '오딘', '그래픽', '사냥', '작업장', '리니지2', '퀘스트', '탈것', '과금']",
+    },
+  ];
 
   return (
     <>
@@ -56,23 +73,40 @@ function Result({ setModalOpen }) {
         <XButton margin="0 0 0 8px" src={Yellow} />
         <XButton margin="20px 0 0 8px" src={Green} />
       </Top>
-      <Box height="56px" lineheight="56px" textalign="center">
+      {/* <Box height="56px" lineheight="56px" textalign="center">
         {" "}
         결과보기
+      </Box> */}
+      <Box height="250px" overflowy="auto">
+        다운로드
+        <ColumnsContainer>
+          {sampleDownload.map((item, index) => (
+            <RecWrapper key={index}>
+              <Img src={item.imgUrl} />
+              <Div>
+                <div>{item.name}</div>
+                {/* 키워드를 파싱하여 개별적으로 표시 */}
+                <SmallDiv>
+                  {parseKeywords(item.category).map((keyword, keywordIndex) => (
+                    <Keyword key={keywordIndex}># {keyword.trim()}</Keyword>
+                  ))}
+                </SmallDiv>
+              </Div>
+            </RecWrapper>
+          ))}
+        </ColumnsContainer>
       </Box>
-      <Box height="400px">
-        사용자님에게 적합한 게임 리스트입니다
+      <Box height="300px">
+        추천목록
         {downloadData.map((item, index) => (
           <RecWrapper key={index}>
             <Img src={item.imgUrl} />
             <Div>
-              <div>{item.name}</div>
+              <SmallDiv>{item.name}</SmallDiv>
               {/* 키워드를 파싱하여 개별적으로 표시 */}
               <SmallDiv>
                 {parseKeywords(item.keyword).map((keyword, keywordIndex) => (
-                  <Keyword key={keywordIndex} color={getRandomColor()}>
-                    # {keyword.trim()}
-                  </Keyword>
+                  <Keyword key={keywordIndex}># {keyword.trim()}</Keyword>
                 ))}
               </SmallDiv>
             </Div>
@@ -107,7 +141,7 @@ const Box = styled.div`
   padding: 5px;
   text-align: ${(props) => props.textalign || "left"};
   line-height: ${(props) => props.lineheight};
-  overflow-y: auto;
+  overflow-y: ${(props) => props.overflowy};
 `;
 
 const Img = styled.img`
@@ -119,12 +153,13 @@ const Img = styled.img`
 
 const RecWrapper = styled.div`
   display: flex;
+  width: 40%;
   margin: 10px 0;
   max-height: 200px;
 `;
 
 const Div = styled.div`
-  margin-top: ${(props) => props.margintop || "16px"};
+  margin-top: ${(props) => props.margintop || "0px"};
 `;
 
 const SmallDiv = styled.div`
@@ -133,10 +168,40 @@ const SmallDiv = styled.div`
 
 const Keyword = styled.a`
   border-radius: 4px;
-  padding: 2px 8px;
+  // padding: 2px 8px;
   margin-right: 2px;
-  margin-bottom: 2px;
-  color: ${(props) => props.color}; getRandomColor();
+  // margin-bottom: 2px;
+  font-size: 16px;
+  color: #777777;
+`;
+
+const PhotoWrapper = styled.img`
+  width: 135px;
+  height: 135px;
+  border-radius: 20px;
+`;
+const Detail = styled.div`
+  display: flex;
+  overflow-x: auto;
+  margin-top: 10px;
+`;
+const DetailWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px; /* 각 게임 아이템 사이의 간격 조절 `;
+const ColumnsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* You can adjust this for spacing between columns */
+
+  /* Set the width for each column, considering the margin */
+  & > div {
+    flex-basis: calc(
+      50% - 20px
+    ); /* 50% width with a margin of 10px on each side */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+  }
 `;
 
 // import React, { useState, useEffect } from "react";

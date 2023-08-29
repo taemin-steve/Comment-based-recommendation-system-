@@ -128,7 +128,7 @@ function ReviewModal({ setModalOpen }) {
         <Result setModalOpen={setModalOpen} />
       )}
       <Box onClick={submitData} justifycontent="center">
-        관심사 선택하기
+        {modalCounter === 0 ? "추천게임 확인하기" : "다운로드"}
       </Box>
     </Wrapper>
   );
