@@ -61,9 +61,9 @@ function Result({ setModalOpen }) {
         게임에서 중요하게 생각하는 키워드를 모두 골라주세요
         {downloadData.map((item, index) => (
           <li key={index}>
-            Brand Name: {item.name}
-            Product Name: {item.category}
-            Option: {item.keyword}
+            게임명 : {item.name}
+            게임사진 : <img src={item.imgUrl} />
+            키워드 : {item.keyword}
           </li>
         ))}
       </Box>
