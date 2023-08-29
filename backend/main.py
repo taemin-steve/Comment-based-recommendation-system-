@@ -34,6 +34,13 @@ sampleDownload = [
     }
 ]
 
+@app.post("/")
+async def receive_modal_data(modal_data: dict):
+    global received_modal_data
+    received_modal_data = modal_data
+    print(received_modal_data)
+    return {"message": "Data received successfully"}
+
 @app.get('/getSampleDownload')  
 async def get_sample_download():
     return sampleDownload
