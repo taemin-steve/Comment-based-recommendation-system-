@@ -98,20 +98,22 @@ function Result({ setModalOpen }) {
       </Box>
       <Box height="300px">
         추천목록
-        {downloadData.map((item, index) => (
-          <RecWrapper key={index}>
-            <Img src={item.imgUrl} />
-            <Div>
-              <SmallDiv>{item.name}</SmallDiv>
-              {/* 키워드를 파싱하여 개별적으로 표시 */}
-              <SmallDiv>
-                {parseKeywords(item.keyword).map((keyword, keywordIndex) => (
-                  <Keyword key={keywordIndex}># {keyword.trim()}</Keyword>
-                ))}
-              </SmallDiv>
-            </Div>
-          </RecWrapper>
-        ))}
+        <ColumnsContainer>
+          {downloadData.map((item, index) => (
+            <RecWrapper key={index}>
+              <Img src={item.imgUrl} />
+              <Div>
+                <div>{item.name}</div>
+                {/* 키워드를 파싱하여 개별적으로 표시 */}
+                <SmallDiv>
+                  {parseKeywords(item.keyword).map((keyword, keywordIndex) => (
+                    <Keyword key={keywordIndex}># {keyword.trim()}</Keyword>
+                  ))}
+                </SmallDiv>
+              </Div>
+            </RecWrapper>
+          ))}
+        </ColumnsContainer>
       </Box>
     </>
   );
