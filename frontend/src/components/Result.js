@@ -78,7 +78,7 @@ function Result({ setModalOpen }) {
         결과보기
       </Box> */}
       <Box height="250px" overflowy="auto">
-        다운로드
+        다운로드목록
         <ColumnsContainer>
           {sampleDownload.map((item, index) => (
             <RecWrapper key={index}>
@@ -96,7 +96,7 @@ function Result({ setModalOpen }) {
           ))}
         </ColumnsContainer>
       </Box>
-      <Box height="300px">
+      <Box height="300px" overflowy="auto">
         추천목록
         <ColumnsContainer>
           {downloadData.map((item, index) => (
