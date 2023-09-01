@@ -4,12 +4,10 @@
 
 # ✨서비스 개요
 
----
-
 > **서비스명**
 > 
 
-## 사용자 **리뷰 데이터 기반** 게임 추천 시스템 구현
+ 사용자 **리뷰 데이터 기반** 게임 추천 시스템 구현
 
 > **한줄 소개**
 > 
@@ -23,19 +21,15 @@
 
 왜 이렇게 게임사들은 사용자들이 리뷰를 남겨주기를 바랄까요?? 아마 아직 사용해보지 않은 사용자들에게 **더 많은 정보를 제공**하고, 조금 더 많은 사용자들이 **게임을 이용**했으면 하길 바라기 때문이라고 생각합니다. 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8aa70b2e-e3b3-40c6-95b3-59b72ba2d226/Untitled.png)
-
 “사용자에게 더 많은 정보를 제공하기 위해서 만들어진 **리뷰 데이터를 직접적으로 추천에 사용**할 수 있다면 더 다채로운 추천이 가능하지 않을까?” 라는 생각에 사용자 기뷰 데이터 기반 추천 시스템을 개발하게 되었습니다. 
 
 # 📝세부 내용
 
-**사용기술, 구현방안 등 작품에 대한 자세한 사항을 자유롭게 알려주세요.**
-
----
 
 웹 크롤링을 통해 추출한 사용자 리뷰, 평점, 전체 리뷰 수 등의 정보가 담긴 데이터를 활용하여 컨텐츠 기반 필터링 과정을 통해 사용자 리뷰에 따른 추천시스템을 구현하였음 
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/00151ea8-83e0-4d2a-b0ce-e805c3ee3e29/Untitled.png)
+![image](https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/98096178/585b91dc-0ffc-4ea9-a29f-4304ace29be7)
+
 
 ### 1. Crawling
 
@@ -67,25 +61,25 @@ IMDB 에서 제안한 Weight Rating 방식으로 평점 재산정
 
 : React, styled-components
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/36032782-544d-4732-9730-737c80d2f119/Untitled.png)
+<img width="80%" src="https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/75752289/0f0aeb5d-157d-4834-95e4-4ed515f41603"/>
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/14fae5b3-e4ac-4fd3-90fc-d8a535133b0b/Untitled.png)
+
+![image](https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/98096178/981324b9-25f9-4d6e-855f-0f50a5d86dcf)
+
+
+![image](https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/98096178/111fee2c-cd47-46ec-91db-ceaf110d1b83)
+
 
 - **사용 기술 :**
 
 콘텐츠 기반 추천 알고리즘 구현, Pandas, Numpy, React, Fastapi, KeyBert
 
-# 4. 기대 효과
+# 기대 효과
 
-서비스를 **통해 얻을 수 이점, 발전 방향성 등을 알려주세요.**
-
----
 
 - 리뷰 데이터와 게임의 장르만을 활용한 최소한의 정보를 바탕으로 추천 시스템을 구현함
 - 게임 선정에 앞서 사용자가 리뷰를 습득하고자 할때 해당 시간을 단축 할 수 있음
 - 게임 선택에 있어서 사용자 경험 정보를 활용 가능해짐
-
-<img width="80%" src="https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/75752289/0f0aeb5d-157d-4834-95e4-4ed515f41603"/>
 
 <br>
 
