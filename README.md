@@ -2,7 +2,7 @@
 
 ## **Introduction** 
 
-<img width="80%" src="https://user-images.githubusercontent.com/16822641/109461495-913fc480-7aa5-11eb-9d0e-aff762669f98.gif"/>
+<img width="80%" src="https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/75752289/0f0aeb5d-157d-4834-95e4-4ed515f41603"/>
 
 <br>
 
