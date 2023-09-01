@@ -17,10 +17,10 @@
 ## **👨‍👨‍👧‍👦 Members**
 | 이름  | 개발분야 |    소개페이지                |  
 | -----| -------|------------------------- |
-|정태민 | | [Github]( )   |
-|김주원 | Front-end, Back-end| [Github](https://github.com/juwon5272)   |
-|박정훈 | | [Github]( )   |
-|장효영 | |[Github]( )   |
+|정태민 | NLP | [Github](https://github.com/taemin-steve)   |
+|김주원 | Frontend, Backend| [Github](https://github.com/juwon5272)   |
+|박정훈 | Crawling | [Github](https://github.com/pjh9712)   |
+|장효영 | NLP |[Github](https://github.com/HyoYoung22)   |
   
   
   
