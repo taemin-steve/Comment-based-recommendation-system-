@@ -57,17 +57,20 @@ IMDB 에서 제안한 Weight Rating 방식으로 평점 재산정
 
 → 유사도 계산시 **Genre와 Key_words 두 변수 동시 반영**하여 추천 시스템에 적용
 
-### 4. Web Page 구현
+### 4. Frontend 구현
 
 : React, styled-components
+
+![image](https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/98096178/981324b9-25f9-4d6e-855f-0f50a5d86dcf)
+
+![image](https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/98096178/27f833bc-bf4e-4dca-9309-92437d3a4c18)
+
+### 5. Web 구현
 
 <img width="80%" src="https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/75752289/0f0aeb5d-157d-4834-95e4-4ed515f41603"/>
 
 
-![image](https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/98096178/981324b9-25f9-4d6e-855f-0f50a5d86dcf)
 
-
-![image](https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/98096178/111fee2c-cd47-46ec-91db-ceaf110d1b83)
 
 
 - **사용 기술 :**
@@ -88,6 +91,8 @@ IMDB 에서 제안한 Weight Rating 방식으로 평점 재산정
 | --   | --------------------------------------------------------------------- |
 | Frontend | ![REACT](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![Axios](https://img.shields.io/badge/Axios-black?style=for-the-badge&logo=Axios&logoColor=black)    |
 | Backend | ![Fastapi](https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=Fastapi&logoColor=black) ![Uvicorn](https://img.shields.io/badge/Uvicorn-009688?style=for-the-badge&logo=Uvicorn&logoColor=black) ![Swagger](https://img.shields.io/badge/swagger-gray?style=for-the-badge&logo=Swagger&logoColor=green)     |
+| Crawling | ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white)
+| NLP | ![KeyBert](https://img.shields.io/badge/KeyBert-00000?style=for-the-badge&logo=KeyBert&logoColor=black) ![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas)  ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy)   |
 
 <br>
 
