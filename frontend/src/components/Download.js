@@ -28,33 +28,69 @@ function Download({ setModalOpen }) {
         "게임성 자체는 재미있습니다. 하지만 운영이 이건 정말 해도해도 너무합니다. 무과금을 지영하지만, 과금의 유혹에 흔들릴 때가 많습니다. 그정도로 좋은 게임성을 가지고 있음에도 작금의 운영진의 행태가 너무 아쉽습니다. 사이게임즈는 퍼블리셔를 교체하는 강수도 검토해주시길 바랍니다.",
     },
   ];
+  // const sampleDownload = [
+  //   {
+  //     imgUrl:
+  //       "https://play-lh.googleusercontent.com/m8HLufg1vrrras6gG5vuMEHaNgdLQvl8gVaYZ5rD87pMZwoy-r-MmT6BSGhSCtDVsRE=w240-h480-rw",
+  //     name: "메이플스토리m",
+  //     category: "",
+  //   },
+  //   {
+  //     imgUrl:
+  //       "https://play-lh.googleusercontent.com/QNU2bKZ3LC56kBEqljThPNkPgi3LXMExJQFyAh7j3zguaFEyS4uH2rCvGmHgIf7NUQ=w240-h480-rw",
+  //     name: "바람의나라: 연",
+  //     category: "",
+  //   },
+  //   {
+  //     imgUrl:
+  //       "https://play-lh.googleusercontent.com/rpLq1mWNwN0GclsTXVv4xrGtb1fUCbCkHqN55ecBBBVi9t_CNmJ33WhG-5fwNU5tids=w240-h480-rw",
+  //     name: "세븐나이츠",
+  //     category: "",
+  //   },
+  // ];
+
+  
   const sampleDownload = [
     {
       imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/9jxg-2019-06-13/14-32-21-238/appIcon.png",
-      name: "애니팡",
-      category: "",
-    },
-    {
-      imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/6ztk-2020-06-25/11-28-16-869/appIcon.png",
-      name: "오목",
-      category: "",
-    },
-    {
-      imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/o7gg-2023-06-08/09-02-36-034/appIcon.png",
+        "https://play-lh.googleusercontent.com/m8HLufg1vrrras6gG5vuMEHaNgdLQvl8gVaYZ5rD87pMZwoy-r-MmT6BSGhSCtDVsRE=w240-h480-rw",
       name: "메이플스토리M",
-      category: "",
+      category:
+        "['roleplaying','메이플', '메소', '메이플스토리', '포스', 'pc', '사냥', '퀘스트', '캐릭터', '컴메', '모바일']",
     },
     {
       imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/yt5p-2021-06-25/00-19-48-939/appIcon.jpeg",
-      name: "오딘: 발할라 라이징",
-      category: "",
+        "https://play-lh.googleusercontent.com/4jTmDD-lq6bZc9JHBYpGGoawqJZvKjpCOYt14nXcAAOEcXLaWzLLq8O7CWQkxiUm4fXM=w240-h480-rw",
+      name: "미르M",
+      category:
+        "['roleplaying','미르', '그래픽', '리니지', '사냥', '진행', '재미', '화신', '과금', '시간', '퀘스트']",
+    },
+    {
+      imgUrl:
+        "https://play-lh.googleusercontent.com/GRRgk62T-pWfC31TzcHe1_pALUc9oBtKLQsWB-VBxapLGSyoJl2VodT2Wr1XgwtCkw=w240-h480-rw",
+      name: "우마무스메 프리티 더비",
+      category:
+        "['roleplaying','우마무스메', '육성', '운영', '경마', '챔미', '미팅', '가챠', '일본', '정도', '쥬얼']"
     },
   ];
-  // const DownloadList = [
+
+  // const sampleDownload = [
+  //   {
+  //     imgUrl:
+  //       "https://play-lh.googleusercontent.com/mnKXlP-7CMBWSyho2khJyF_vIyIbk7nLUKE82vbpjcBVVSSWr2Q7gpxlCCynAiBfBfHd=w240-h480-rw",
+  //     name: "애니팡 ",
+  //     category:
+  //       "['board','사람', '섯다', '피망', '애니팡', '재미', '머니', '광땡', '맛고', '시간', '올인']",
+  //   },
+  //   {
+  //     imgUrl:
+  //       "https://play-lh.googleusercontent.com/AgrmOotjBzn15wI8SRbc6wiXMJtQY36TFuk8TERQ4B3aqVozZVG-jgxgZIFkqDRcfLke=w240-h480-rw",
+  //     name: "피망 섯다",
+  //     category:
+  //       "['board','광땡', '시간', '재미', '장땡', '피망', '올인', '섯다', '스릴', '피망섯다', '오링']",
+  //   },
+  // ];
+  // const sampleDownload = [
   //   {
   //     imgUrl:
   //       "https://playgame-img.kakaogames.com/production/images/j6jp-2022-09-13/18-53-48-050/appIcon.jpeg",

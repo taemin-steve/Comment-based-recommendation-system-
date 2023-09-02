@@ -30,34 +30,51 @@ function Result({ setModalOpen }) {
     return keywords.replace(/\[|\]|'/g, "").split(",");
   };
 
+  // const sampleDownload = [
+  //   {
+  //     imgUrl:
+  //       "https://play-lh.googleusercontent.com/m8HLufg1vrrras6gG5vuMEHaNgdLQvl8gVaYZ5rD87pMZwoy-r-MmT6BSGhSCtDVsRE=w240-h480-rw",
+  //     name: "메이플스토리m ",
+  //     category:
+  //       "['roleplaying','메이플', '메소', '메이플스토리', '포스', 'pc', '사냥', '퀘스트', '캐릭터', '컴메', '모바일']",
+  //   },
+  //   {
+  //     imgUrl:
+  //       "https://play-lh.googleusercontent.com/QNU2bKZ3LC56kBEqljThPNkPgi3LXMExJQFyAh7j3zguaFEyS4uH2rCvGmHgIf7NUQ=w240-h480-rw",
+  //     name: "바람의나라: 연",
+  //     category:
+  //       "['roleplaying', '나라', '도안', '사냥', '슈퍼캣', '레이드', '생각', '확률', '아이템', '도사', '모바일']",
+  //   },
+  //   {
+  //     imgUrl:
+  //       "https://play-lh.googleusercontent.com/rpLq1mWNwN0GclsTXVv4xrGtb1fUCbCkHqN55ecBBBVi9t_CNmJ33WhG-5fwNU5tids=w240-h480-rw",
+  //     name: "세븐나이츠",
+  //     category:
+  //       "['roleplaying','리니지', '아키에이지', '오딘', '그래픽', '사냥', '작업장', '리니지2', '퀘스트', '탈것', '과금']",
+  //   },
+  // ];
+
   const sampleDownload = [
     {
       imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/9jxg-2019-06-13/14-32-21-238/appIcon.png",
-      name: "애니팡",
-      category:
-        "['슈트', '그래픽', 'sf', 'pc', '재미', '아레스', '타격감', '리니지', '필드', '최적화']",
-    },
-    {
-      imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/6ztk-2020-06-25/11-28-16-869/appIcon.png",
-      name: "오목",
-      category:
-        "['미르4', '그래픽', '미르', '채집', '토벌', '컨텐츠', '진행', '마방진', '기연', '정도']",
-    },
-    {
-      imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/o7gg-2023-06-08/09-02-36-034/appIcon.png",
+        "https://play-lh.googleusercontent.com/m8HLufg1vrrras6gG5vuMEHaNgdLQvl8gVaYZ5rD87pMZwoy-r-MmT6BSGhSCtDVsRE=w240-h480-rw",
       name: "메이플스토리M",
       category:
-        "['영지', '에버', '스토리', '소울', '정령', '캐릭터', '컨텐츠', '모델링', '전투', '재화']",
+        "['roleplaying','메이플', '메소', '메이플스토리', '포스', 'pc', '사냥', '퀘스트', '캐릭터', '컴메', '모바일']",
     },
     {
       imgUrl:
-        "https://playgame-img.kakaogames.com/production/images/yt5p-2021-06-25/00-19-48-939/appIcon.jpeg",
-      name: "오딘: 발할라 라이징",
+        "https://play-lh.googleusercontent.com/4jTmDD-lq6bZc9JHBYpGGoawqJZvKjpCOYt14nXcAAOEcXLaWzLLq8O7CWQkxiUm4fXM=w240-h480-rw",
+      name: "미르M",
       category:
-        "['리니지', '아키에이지', '오딘', '그래픽', '사냥', '작업장', '리니지2', '퀘스트', '탈것', '과금']",
+        "['roleplaying','미르', '그래픽', '리니지', '사냥', '진행', '재미', '화신', '과금', '시간', '퀘스트']",
+    },
+    {
+      imgUrl:
+        "https://play-lh.googleusercontent.com/GRRgk62T-pWfC31TzcHe1_pALUc9oBtKLQsWB-VBxapLGSyoJl2VodT2Wr1XgwtCkw=w240-h480-rw",
+      name: "우마무스메 프리티 더비",
+      category:
+        "['roleplaying','우마무스메', '육성', '운영', '경마', '챔미', '미팅', '가챠', '일본', '정도', '쥬얼']"
     },
   ];
 

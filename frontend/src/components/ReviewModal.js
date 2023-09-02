@@ -62,18 +62,26 @@ function ReviewModal({ setModalOpen }) {
     },
   ];
 
+  // const DownloadList = [
+  //   {
+  //     name: "메이플스토리m",
+  //   },
+  //   {
+  //     name: "바람의나라 연",
+  //   },
+  //   {
+  //     name: "세븐나이츠",
+  //   },
+  // ];
   const DownloadList = [
-    {
-      name: "애니팡",
-    },
-    {
-      name: "오목",
-    },
     {
       name: "메이플스토리M",
     },
     {
-      name: "오딘",
+      name: "미르M",
+    },
+    {
+      name: "우마무스메 프리티 더비",
     },
   ];
 
