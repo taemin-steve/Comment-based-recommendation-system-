@@ -1,3 +1,4 @@
+from recommend import preprocess_data , recommend_game_list
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import pandas as pd
@@ -6,81 +7,86 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from collections import defaultdict
 
-rev_data  = pd.read_csv('../game_info_keywords_new.csv')
 
-m = rev_data['review_num'].quantile(0.9)
-print(m)
-# rev_data = rev_data.loc[rev_data['review_ um'] >= m]
+data_path = '../game_info_keywords_new.csv'
 
-c = rev_data['rating'].mean()
+rev_data, similarity_new = preprocess_data(data_path)
 
-def weight_rating(x,m=m, c=c):
-    v = x['review_num']
-    r = x['rating']
+# rev_data  = pd.read_csv('../game_info_keywords_new.csv')
 
-    return (v / (v+m)*r)+(m/(v+m) * c)
+# m = rev_data['review_num'].quantile(0.9)
+# print(m)
+# # rev_data = rev_data.loc[rev_data['review_ um'] >= m]
 
-rev_data['score'] = rev_data.apply(weight_rating, axis = 1)
+# c = rev_data['rating'].mean()
 
-counter_vector = CountVectorizer(ngram_range = (1,3))
-tfidf = TfidfVectorizer()
+# def weight_rating(x,m=m, c=c):
+#     v = x['review_num']
+#     r = x['rating']
 
-tfidf_matrix_keys = tfidf.fit_transform(rev_data['key_words'])
-c_vector_keys = counter_vector.fit_transform(rev_data['key_words'])
+#     return (v / (v+m)*r)+(m/(v+m) * c)
 
-tfidf_matrix_genres = tfidf.fit_transform(rev_data['genre'])
-c_vector_genres = counter_vector.fit_transform(rev_data['genre'])
+# rev_data['score'] = rev_data.apply(weight_rating, axis = 1)
+
+# counter_vector = CountVectorizer(ngram_range = (1,3))
+# tfidf = TfidfVectorizer()
+
+# tfidf_matrix_keys = tfidf.fit_transform(rev_data['key_words'])
+# c_vector_keys = counter_vector.fit_transform(rev_data['key_words'])
+
+# tfidf_matrix_genres = tfidf.fit_transform(rev_data['genre'])
+# c_vector_genres = counter_vector.fit_transform(rev_data['genre'])
 
 
-similarity_genre_c = cosine_similarity(c_vector_genres, c_vector_genres).argsort()[:,::-1]
-similarity_genre_t = cosine_similarity(tfidf_matrix_genres, tfidf_matrix_genres).argsort()[:,::-1]
+# similarity_genre_c = cosine_similarity(c_vector_genres, c_vector_genres).argsort()[:,::-1]
+# similarity_genre_t = cosine_similarity(tfidf_matrix_genres, tfidf_matrix_genres).argsort()[:,::-1]
 
-similarity_key_c = cosine_similarity(c_vector_keys, c_vector_keys).argsort()[:,::-1]
-similarity_key_t = cosine_similarity(tfidf_matrix_keys, tfidf_matrix_keys).argsort()[:,::-1]
+# similarity_key_c = cosine_similarity(c_vector_keys, c_vector_keys).argsort()[:,::-1]
+# similarity_key_t = cosine_similarity(tfidf_matrix_keys, tfidf_matrix_keys).argsort()[:,::-1]
 
-def recommend_movie_list_gc(rev_data, movie_title, top = 7):
-    target_movie_index = rev_data[rev_data['title'] == movie_title].index.values
+# def recommend_movie_list_gc(rev_data, movie_title, top = 7):
+#     target_movie_index = rev_data[rev_data['title'] == movie_title].index.values
 
-    sim_index = similarity_genre_c[target_movie_index, :top].reshape(-1)
+#     sim_index = similarity_genre_c[target_movie_index, :top].reshape(-1)
 
-    sim_index = sim_index[sim_index != target_movie_index]
+#     sim_index = sim_index[sim_index != target_movie_index]
 
-    result = rev_data.iloc[sim_index].sort_values('score', ascending = False)[:5]
+#     result = rev_data.iloc[sim_index].sort_values('score', ascending = False)[:5]
 
-    return result
+#     return result
 
-def recommend_movie_list_gt(rev_data, movie_title, top = 7):
-    target_movie_index = rev_data[rev_data['title'] == movie_title].index.values
+# def recommend_movie_list_gt(rev_data, movie_title, top = 7):
+#     target_movie_index = rev_data[rev_data['title'] == movie_title].index.values
 
-    sim_index = similarity_genre_t[target_movie_index, :top].reshape(-1)
+#     sim_index = similarity_genre_t[target_movie_index, :top].reshape(-1)
 
-    sim_index = sim_index[sim_index != target_movie_index]
+#     sim_index = sim_index[sim_index != target_movie_index]
 
-    result = rev_data.iloc[sim_index].sort_values('score', ascending = False)[:5]
+#     result = rev_data.iloc[sim_index].sort_values('score', ascending = False)[:5]
 
-    return result
+#     return result
 
-def recommend_movie_list_kc(rev_data, movie_title, top = 7):
-    target_movie_index = rev_data[rev_data['title'] == movie_title].index.values
+# def recommend_movie_list_kc(rev_data, movie_title, top = 7):
+#     target_movie_index = rev_data[rev_data['title'] == movie_title].index.values
 
-    sim_index = similarity_key_c[target_movie_index, :top].reshape(-1)
+#     sim_index = similarity_key_c[target_movie_index, :top].reshape(-1)
 
-    sim_index = sim_index[sim_index != target_movie_index]
+#     sim_index = sim_index[sim_index != target_movie_index]
 
-    result = rev_data.iloc[sim_index].sort_values('score', ascending = False)[:5]
+#     result = rev_data.iloc[sim_index].sort_values('score', ascending = False)[:5]
 
-    return result
+#     return result
 
-def recommend_movie_list_kt(rev_data, movie_title, top = 7):
-    target_movie_index = rev_data[rev_data['title'] == movie_title].index.values
+# def recommend_movie_list_kt(rev_data, movie_title, top = 7):
+#     target_movie_index = rev_data[rev_data['title'] == movie_title].index.values
 
-    sim_index = similarity_key_t[target_movie_index, :top].reshape(-1)
+#     sim_index = similarity_key_t[target_movie_index, :top].reshape(-1)
 
-    sim_index = sim_index[sim_index != target_movie_index]
+#     sim_index = sim_index[sim_index != target_movie_index]
 
-    result = rev_data.iloc[sim_index].sort_values('score', ascending = False)[:5]
+#     result = rev_data.iloc[sim_index].sort_values('score', ascending = False)[:5]
 
-    return result
+#     return result
 
 app = FastAPI()
 
@@ -123,14 +129,14 @@ async def receive_modal_data(modal_data: dict):
     for i in range(len(received_modal_data['DownloadList'])):
         # print(received_modal_data['DownloadList'][i]['name'])
         # print(received_modal_data['DownloadList'][i]['name'])
-        a = recommend_movie_list_kt(rev_data, movie_title = received_modal_data['DownloadList'][i]['name'])
+        a = recommend_game_list(rev_data, similarity_new, received_modal_data['DownloadList'][i]['name'])
         a = a[['title','score']]
         for i in range(len(a)):
             d[a.iloc[i][0]] += a.iloc[i][1]
     d =  sorted(d.items(), key=lambda x: -x[1])
     print(d[:5])
     # new_d = []
-    # sampleDownload.clear()
+    sampleDownload.clear()
     for i in range(len(d[:5])):
         row = rev_data[rev_data['title'] == d[i][0]]
         
