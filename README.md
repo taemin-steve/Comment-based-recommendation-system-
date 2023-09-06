@@ -1,6 +1,7 @@
 # Comment-based-recommendation-system-
 
-## **Introduction** 
+# DEMO
+<img width="80%" src="https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/75752289/0f0aeb5d-157d-4834-95e4-4ed515f41603"/>
 
 # ✨서비스 개요
 
@@ -65,9 +66,6 @@ IMDB 에서 제안한 Weight Rating 방식으로 평점 재산정
 
 ![image](https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/98096178/27f833bc-bf4e-4dca-9309-92437d3a4c18)
 
-### 5. Web 구현
-
-<img width="80%" src="https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/75752289/0f0aeb5d-157d-4834-95e4-4ed515f41603"/>
 
 
 
