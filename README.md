@@ -1,4 +1,7 @@
 # Comment-based-recommendation-system-
+<span>더 세부적인 내용은 아래의 링크에서 확인하실 수 있습니다. <img src ="https://img.shields.io/badge/Velog-20C997.svg?style=flat&logo=Velog&logoColor=white"/></span>
+</br>
+</br>
 
 # DEMO
 <img width="80%" src="https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/75752289/0f0aeb5d-157d-4834-95e4-4ed515f41603"/>  
