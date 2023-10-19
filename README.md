@@ -3,12 +3,7 @@
 # DEMO
 <img width="80%" src="https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/75752289/0f0aeb5d-157d-4834-95e4-4ed515f41603"/>
 
-# ✨서비스 개요
-
-> **서비스명**
-> 
-
- 사용자 **리뷰 데이터 기반** 게임 추천 시스템 구현
+# 서비스 개요
 
 > **한줄 소개**
 > 
@@ -27,12 +22,12 @@
 # 📝세부 내용
 
 
-웹 크롤링을 통해 추출한 사용자 리뷰, 평점, 전체 리뷰 수 등의 정보가 담긴 데이터를 활용하여 컨텐츠 기반 필터링 과정을 통해 사용자 리뷰에 따른 추천시스템을 구현하였음 
+웹 크롤링을 통해 추출한 사용자 리뷰, 평점, 전체 리뷰 수 등의 정보가 담긴 데이터를 활용하여 컨텐츠 기반 필터링 과정을 통해 사용자 리뷰에 따른 추천시스템을 구현
 
 ![image](https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/98096178/585b91dc-0ffc-4ea9-a29f-4304ace29be7)
 
 
-### 1. Crawling
+## Crawling
 
 Selenium 을 이용하여 Data Crawling 진행 
 
@@ -40,25 +35,28 @@ Selenium 을 이용하여 Data Crawling 진행
 
 각각의 게임마다 title,genre,rating,review_num,url,img, 500개의 리뷰 
 
-### 2. 키워드 추출
+## 키워드 추출
 
 리뷰 데이터 하나에 대하여 한국어로 학습된 [skt/kobert-base-v1](https://huggingface.co/skt/kobert-base-v1) pretrained 모델을 사용하여 keyBert() 진행, **개별 리뷰 키워드,** 
 
 500개의 문장에서 추출된 key world 의 가중치를 계산하여 **게임의 통합 키워드 선정** (통합 키워드를 선정하기 위하여 TF - IDF 진행)
 
-### 3. 컨텐츠 기반 추천 알고리즘
+## 컨텐츠 기반 추천 알고리즘
 
-IMDB 에서 제안한 Weight Rating 방식으로 평점 재산정
-
-→ 기존의 Rating 점수에 리뷰 갯수에 대한 가중치 할당 방식
-
+IMDB 에서 제안한 Weight Rating 방식으로 평점 재산정 (기존의 Rating 점수에 리뷰 갯수에 대한 가중치 할당 방식)
 **TF - IDF** 를 통해  키워드들에 대한 중요도를 가중치로  벡터 임베딩
+**코사인 유사도** 함수 활용  
+유사도 계산시 **Genre와 Key_words 두 변수 동시 반영**하여 추천 시스템에 적용
 
-**코사인 유사도** 함수 활용
+## 결과 분석 
+![image](https://velog.velcdn.com/images/taemin-steve/post/1a02a733-cfc4-4980-92bb-662aa1282ed1/image.png)
+### 사용자 평가 기반 세부카테고리 추천 가능 
+'리니지' 라는 키워드와 같이 사용자들이 받아들이는 보다 직관적이고 세부적인 카테고리로 분할하여 추천할 수 있음 
+### 장르에 국한되지 않는 다채로운 추천 가능
+다운로드 항목을 보면 모두 roleplaying 게임이지만, 실제로 추천되는 게임들은 action과 simulation 장르의 게임 또한 추천되는 것을 확인할 수 있다. key word만 겹친다면 장르를 넘어선 추천 가능
 
-→ 유사도 계산시 **Genre와 Key_words 두 변수 동시 반영**하여 추천 시스템에 적용
 
-### 4. Frontend 구현
+## 4. Frontend 구현
 
 : React, styled-components
 
@@ -66,33 +64,13 @@ IMDB 에서 제안한 Weight Rating 방식으로 평점 재산정
 
 ![image](https://github.com/KW-Programmers-Algorithm-Study/Comment-based-recommendation-system-/assets/98096178/27f833bc-bf4e-4dca-9309-92437d3a4c18)
 
-
-
-
-
-
-- **사용 기술 :**
-
-콘텐츠 기반 추천 알고리즘 구현, Pandas, Numpy, React, Fastapi, KeyBert
-
-# 기대 효과
-
+## 기대 효과
 
 - 리뷰 데이터와 게임의 장르만을 활용한 최소한의 정보를 바탕으로 추천 시스템을 구현함
 - 게임 선정에 앞서 사용자가 리뷰를 습득하고자 할때 해당 시간을 단축 할 수 있음
 - 게임 선택에 있어서 사용자 경험 정보를 활용 가능해짐
 
-<br>
 
-## **Tech stack**
-| 분류  |  기술                                                                 |
-| --   | --------------------------------------------------------------------- |
-| Frontend | ![REACT](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black) ![Axios](https://img.shields.io/badge/Axios-black?style=for-the-badge&logo=Axios&logoColor=black)    |
-| Backend | ![Fastapi](https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=Fastapi&logoColor=black) ![Uvicorn](https://img.shields.io/badge/Uvicorn-009688?style=for-the-badge&logo=Uvicorn&logoColor=black) ![Swagger](https://img.shields.io/badge/swagger-gray?style=for-the-badge&logo=Swagger&logoColor=green)     |
-| Crawling | ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=flat-square&logo=selenium&logoColor=white)
-| NLP | ![KeyBert](https://img.shields.io/badge/KeyBert-00000?style=for-the-badge&logo=KeyBert&logoColor=black) ![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas)  ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy)   |
-
-<br>
 
 ## **👨‍👨‍👧‍👦 Members**
 | 이름  | 개발분야 |    소개페이지                |  
